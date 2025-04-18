@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 23</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #eef2f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contenedor {
+            background-color: #fff;
+            padding: 2rem 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+
+        input[type="radio"] {
+            margin-right: 0.5rem;
+            accent-color: #007bff;
+        }
+
+        #resultado {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #007bff;
+            padding: 0.5rem;
+            background: #eaf4ff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <h1>Seleccioná tu lenguaje favorito:</h1>
+
+        <form>
+            <label><input type="radio" name="lenguaje" value="HTML"> HTML</label>
+            <label><input type="radio" name="lenguaje" value="CSS"> CSS</label>
+            <label><input type="radio" name="lenguaje" value="JavaScript"> JavaScript</label>
+        </form>
+
+        <div id="resultado">Seleccioná una opción...</div>
+    </div>
+
+    <script type="module" src="js/ejercicio23.js"></script> 
+</body>
+</html>
