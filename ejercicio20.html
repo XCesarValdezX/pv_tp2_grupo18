@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Países y Capitales de América</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #34495e;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .selection-display {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 8px;
+            display: none;
+        }
+        .selection-text {
+            color: #2980b9;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Países y Capitales de América</h1>
+        
+        <div class="form-group">
+            <label for="paises">Seleccione un país:</label>
+            <select id="paises">
+                <option value="" disabled selected>Seleccione un país</option>
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="canada">Canadá</option>
+                <option value="colombia">Colombia</option>
+                <option value="mexico">México</option>
+                <option value="peru">Perú</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="capitales">Capital:</label>
+            <select id="capitales">
+                <option value="" disabled selected>Capital del país</option>
+                <option value="buenosaires">Buenos Aires</option>
+                <option value="brasilia">Brasilia</option>
+                <option value="ottawa">Ottawa</option>
+                <option value="bogota">Bogotá</option>
+                <option value="ciudaddemexico">Ciudad de México</option>
+                <option value="lima">Lima</option>
+            </select>
+        </div>
+        
+        <div class="selection-display" id="display">
+            <p>Has seleccionado: <span class="selection-text" id="seleccion"></span></p>
+        </div>
+    </div>
+
+    <script>
+        const paisesCapitales = {
+            "argentina": "buenosaires",
+            "brasil": "brasilia",
+            "canada": "ottawa",
+            "colombia": "bogota",
+            "mexico": "ciudaddemexico",
+            "peru": "lima"
+        };
+        
+        const selectPaises = document.getElementById('paises');
+        const selectCapitales = document.getElementById('capitales');
+        const display = document.getElementById('display');
+        const seleccionTexto = document.getElementById('seleccion');
+        
+        function obtenerNombres(valorPais, valorCapital) {
+            const nombresPaises = {
+                "argentina": "Argentina",
+                "brasil": "Brasil",
+                "canada": "Canadá",
+                "colombia": "Colombia",
+                "mexico": "México",
+                "peru": "Perú"
+            };
+            
+            const nombresCapitales = {
+                "buenosaires": "Buenos Aires",
+                "brasilia": "Brasilia",
+                "ottawa": "Ottawa",
+                "bogota": "Bogotá",
+                "ciudaddemexico": "Ciudad de México",
+                "lima": "Lima"
+            };
+            
+            return {
+                pais: nombresPaises[valorPais],
+                capital: nombresCapitales[valorCapital]
+            };
+        }
+        
+        selectPaises.addEventListener('change', function() {
+            const paisSeleccionado = this.value;
+            const capitalCorrespondiente = paisesCapitales[paisSeleccionado];
+            
+            selectCapitales.value = capitalCorrespondiente;
+            
+            const nombres = obtenerNombres(paisSeleccionado, capitalCorrespondiente);
+            
+            seleccionTexto.textContent = `${nombres.pais} - ${nombres.capital}`;
+            display.style.display = 'block';
+            console.log(`País seleccionado: ${nombres.pais}, Capital: ${nombres.capital}`);
+        });
+        
+        
+        selectCapitales.addEventListener('change', function() 
+        {
+            const capitalSeleccionada = this.value;
+            
+            let paisCorrespondiente;
+            for (const pais in paisesCapitales) {
+                if (paisesCapitales[pais] === capitalSeleccionada) {
+                    paisCorrespondiente = pais;
+                    break;
+                }
+            }
+            
+            selectPaises.value = paisCorrespondiente;
+            const nombres = obtenerNombres(paisCorrespondiente, capitalSeleccionada);
+            seleccionTexto.textContent = `${nombres.pais} - ${nombres.capital}`;
+            display.style.display = 'block';
+            console.log(`País seleccionado: ${nombres.pais}, Capital: ${nombres.capital}`);
+        });
+    </script>
+</body>
+</html>
