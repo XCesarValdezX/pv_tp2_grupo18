@@ -1,0 +1,10 @@
+
+function mostrarArreglo(arreglo)    {
+    for (let i = 0; i < arreglo.length; i++) 
+        {
+        console.log(arreglo[i]);
+    }
+  }
+  
+  const numeros = [3, 8, 20, 12, 56];
+  mostrarArreglo(numeros);
