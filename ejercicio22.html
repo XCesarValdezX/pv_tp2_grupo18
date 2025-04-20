@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Texto Dinámico</title>
+    <style>
+      body {
+        font-family: Arial;
+        background-color: #b4ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .contenedor {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 90%;
+        max-width: 400px;
+      }
+
+      input {
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+        margin-bottom: 15px;
+        border-radius: 15px;
+        border: 2px solid #ccc;
+        outline: none;
+      }
+
+      p {
+        font-size: 18px;
+        color: #4d4c4c;
+        margin-top: 20px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+        border-radius: 15px;
+      }
+
+      #displayText {
+        padding: 10px;
+        background-color: #e2e2e2;
+        border-radius: 5px;
+        min-height: 40px;
+        transition: background-color 0.3s ease;
+      }
+
+      .largo {
+        color: #1aaee3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <h2>Escribe algo:</h2>
+      <input type="text" id="texto1" placeholder="Escribe aquí..." />
+      <p id="texto2">El texto aparecerá aquí</p>
+    </div>
+
+    <script src="/pv_tp2_grupo18/js/ejercicio22.js"></script>
+  </body>
+</html>
