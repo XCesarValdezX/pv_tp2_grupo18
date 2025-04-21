@@ -1,6 +1,8 @@
-const texto1 = document.getElementById("texto1");
-const texto2 = document.getElementById("texto2");
+import { actualizarTexto } from './funcion21.js';
 
-texto1.addEventListener("input", function() {
-    texto2.textContent = texto1.value;
+const input = document.getElementById('texto1');
+const salida = document.getElementById('texto2');
+
+input.addEventListener('input', () => {
+  actualizarTexto(input.value, salida);
 });

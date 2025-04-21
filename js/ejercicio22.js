@@ -1,13 +1,8 @@
-const texto1 = document.getElementById("texto1");
-const texto2 = document.getElementById("texto2");
+import { actualizarTexto } from './funcion22.js';
 
-texto1.addEventListener("input", () => {
-    const texto = texto1.value;
-    texto2.textContent = texto;
+const input = document.getElementById('texto1');
+const salida = document.getElementById('texto2');
 
-    if (texto.length > 20) {
-        texto2.classList.add("largo");
-    } else {
-        texto2.classList.remove("largo");
-    }
+input.addEventListener('input', () => {
+  actualizarTexto(input.value, salida);
 });
