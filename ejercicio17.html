@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio 17</title>
+    <script>
+        const contarLetraA = (x) => {
+            return x.split("").filter(letra => letra.toLowerCase() === "a").length;
+        };
+        const texto = prompt("Ingrese un texto:");
+        if (texto) {
+            alert("La cantidad de veces que aparece la letra a es: " + contarLetraA(texto));
+        } else {
+            alert("No ingresaste ningún texto.");
+        }
+    </script>
+</head>
+<body>
+    <h1>EJERCICIO 17</h1>
+    <h2>Programacion Visual</h2>
+</body>
+</html>
