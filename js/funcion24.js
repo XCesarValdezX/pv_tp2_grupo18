@@ -12,5 +12,7 @@ const colores = [
 // Función que elige un color aleatorio del array
 export const obtenerColorAleatorio = () => {
     const indice = Math.floor(Math.random() * colores.length);
-    return colores[indice]; // Retorna el objeto completo
+    const color = colores[indice];
+    console.log(`Color seleccionado desde la función: ${color.nombre} (${color.codigo})`);
+    return color;
 };
